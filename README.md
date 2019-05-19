@@ -1,14 +1,9 @@
 # GraalVM docker image
 
-Docker image containing the Community Edition of GraalVM with the extra languages enabled.
+Docker image containing the Community Edition of GraalVM with the extra languages enabled. 
 Maven 3.6 is also added for easy use in projects
 
-## Build
-
-```bash
-docker build -t ivonet/graalvm .
-docker push ivonet/graalvm
-```
+The images is based on the official image but makes it more polyglot and developer ready :-)
 
 ## Example(s)
 
