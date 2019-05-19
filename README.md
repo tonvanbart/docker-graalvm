@@ -1,7 +1,7 @@
 # GraalVM docker image
 
 Docker image containing the Community Edition of GraalVM with the extra languages enabled. 
-Maven 3.6 is also added for easy use in projects
+Maven 3.6.1 is also added for easy use in projects
 
 The images is based on the official image but makes it more polyglot and developer ready :-)
 
