@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 docker_name=ivonet
 image=graalvm
-version=19.0.0
+version=1.0.0-rc16
 
 deploy=false
 #deploy=true
