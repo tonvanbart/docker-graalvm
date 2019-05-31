@@ -22,7 +22,7 @@ docker run                    \
   -p 8080:8080                \
   -p 5005:5005                \
   -v "${HOME}/.m2:/root/.m2"  \
-  ivonet/graalvm              \
+  ivonet/graalvm:1.0.0-rc16   \
   mvn compile quarkus:dev
 ```
 
