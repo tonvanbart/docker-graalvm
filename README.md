@@ -3,28 +3,58 @@
 Docker image containing the Community Edition of GraalVM with the extra languages enabled. 
 Maven 3.6.1 is also added for easy use in projects
 
-The images is based on the official image but makes it more polyglot and developer ready :-)
+This image is completely based on the official oracle/graalvm builds and follows the same versioning system.
+It only fixes some settings like GRAALVM_HOME and activates the other languages making it more developer friendly.
 
 ## Example(s)
 
+### quarkus:dev
 The command below will run `mvn compile quarkus:dev` from
 the current folder mapping the local maven repository as a volume
 and exposing two ports for easy usage outside the container.
 
 The compiling and running will happen against the GraalVM in the container.
 
+* Quarkus dev mode build
+
 ```bash
 docker run                    \
   -it                         \
   --rm                        \
-  --name graalvm              \
-  -v $(pwd):/project          \
-  -p 8080:8080                \
-  -p 5005:5005                \
+  -v "$(pwd):/project"        \
   -v "${HOME}/.m2:/root/.m2"  \
+  -p 8080:8080                \
   ivonet/graalvm:1.0.0-rc16   \
   mvn compile quarkus:dev
 ```
+
+### native-image build
+
+```bash
+docker run                    \
+  -it                         \
+  --rm                        \
+  -v "$(pwd):/project"        \
+  -v "${HOME}/.m2:/root/.m2"  \
+  -p 8080:8080                \
+  ivonet/graalvm:1.0.0-rc16   \
+  mvn package -Pnative
+```
+
+### GraalVM as interactive shell
+
+```bash
+docker run                    \
+  -it                         \
+  --rm                        \
+  -v "$(pwd):/project"        \
+  -v "${HOME}/.m2:/root/.m2"  \
+  -p 8080:8080                \
+  ivonet/graalvm:1.0.0-rc16   \
+  /bin/sh
+```
+
+
 
 
 ---
